@@ -11,7 +11,6 @@ layout: feed
 	<id>http://cnjianweide.github.io/blog</id>
 	<author>
 		<name>Jianwei Shi</name>
-		<email>jianwei.shi.cn@outlook.com</email>
 	</author>
 
 	{% for post in site.posts %}
