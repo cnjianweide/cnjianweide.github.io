@@ -17,23 +17,25 @@ and so on...
 # 3. execute buildStandalone
 sudo bash buildStandalone.sh
 
-## 3a Troubleshooting with build problem
+## 3a Troubleshooting with build problem (Source: [[^1]])
+### Problem Description
 Ecoutered problem "error: narrowing conversion of ‘'\37777777756'’ from ‘char’ to ‘unsigned char’ inside { } [-Wnarrowing]
 unsigned char smileMagic[] = {(char)0xEE, (char)0x11, (char)0x11, (char)0x00};"
-Source: https://github.com/naxingyu/opensmile/issues/2
-Solution:
-- Newer gcc Version does not tolerate cast from char to unsigned char, thus you need to change the casts of the consts from char to unsigned char in vectorTransform.hpp in line 117. It will be solved in version 2.4. which will be released by audEERING soon.
-- I also encountered with that issue.
-If you are too 'lazy' to change it manually, you can type the following command on the terminal when you are in opensmile-2.3.0:
-sed -i '117s/(char)/(unsigned char)/g' src/include/core/vectorTransform.hpp
 
+
+### Analyze
+Newer gcc Version does not tolerate cast from char to unsigned char, thus you need to change the casts of the consts from char to unsigned char in vectorTransform.hpp in line 117. It will be solved in version 2.4. which will be released by audEERING soon.
+
+### Solution
+>If you are too 'lazy' to change it manually, you can type the following command on the terminal when you are in opensmile-2.3.0:
+sed -i '117s/(char)/(unsigned char)/g' src/include/core/vectorTransform.hpp
 If you are on the same level with opensmile-2.3.0 directory, you can type:
 sed -i '117s/(char)/(unsigned char)/g' opensmile-2.3.0/src/include/core/vectorTransform.hpp
 
 ## 3b Build again
 execute the command again and I saw:
 
-```bash
+```
 ----------------------------------------------------------------------
 Libraries have been installed in:
 /home/jianwei/opt/opensmile-2.3.0/inst/lib
@@ -68,10 +70,14 @@ We can now move on to test it.
 
 ## Result
 Some text from opensmile.energy.csv
-```bash
+```
 frameIndex;frameTime;pcm_LOGenergy
 0;0.000000;-1.383729e+01
 1;0.010000;-1.344107e+01
 2;0.020000;-1.362546e+01
 3;0.030000;-1.371792e+01
 ```
+
+---
+Footnote: 
+[^1] https://github.com/naxingyu/opensmile/issues/2
