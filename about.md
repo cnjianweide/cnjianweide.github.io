@@ -4,4 +4,4 @@ title: About
 permalink: /about/
 ---
 
-Introduce yourself here... so people will know who you are and what you do.. blah..blah..blah..
+Hello, my name is Jianwei Shi (石 渐蔚). I am now studying at the University of Hannover, Germany. I am happy to share you my experience and ideas here.
