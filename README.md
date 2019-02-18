@@ -1,22 +1,13 @@
-[![](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/wild-flame)
+# Thinkspace
 
-# jekyll-simple
+> Thinkspace is just another minimalist Jekyll theme which designed for technical writing blog.
 
-## simple
-simple is a theme designed for blogger using static site generator like jekyll, Hexo etc.
+[![LICENSE](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE) ![GENERATOR](https://img.shields.io/badge/made_with-jekyll-blue.svg) ![VERSION](https://img.shields.io/badge/current_version-2.5-green.svg) ![TRAVIS-CI](https://travis-ci.org/heiswayi/thinkspace.svg?branch=master)
 
-Especially for those who writes in both Chinese and English. The font-type setting looks really good when writers use Chinese mixed with English.
+- **Demo:** https://heiswayi.github.io/thinkspace/
 
-Supposedly, this could work with Japanese as well but never had a chance to try.
+![SCREENSHOT](https://i.imgur.com/1YS078k.png)
 
-## Story behind this theme
+## License
 
-It has been long that using font with Chinese in web was a tedious and time-consuming work. It would be almost impossible to make different OS or devices to look the same.
-
-iOS 9 has pulished some new fonts in Chinese and I decided to make one theme that looks good on iOS devices, at the same time, making it acceptable on computers using other fonts.
-
-So mobile goes first, then the macOS.
-
-## ^-^
-
-You can click the button [Say Thanks!](https://saythanks.io/to/wild-flame) at the first of README if you use/like my project. :D
+[MIT](LICENSE.md)
