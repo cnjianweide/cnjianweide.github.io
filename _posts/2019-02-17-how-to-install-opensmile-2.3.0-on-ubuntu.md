@@ -6,17 +6,17 @@ description: "A brief introduction with troubleshooting"
 tags: "OpenSMILE, Ubuntu, troubleshooting"
 ---
 ## 1. Unpacking
-'''bash
+```bash
 tar -zxvf opensmile-2.3.0.tar.gz 
-'''
+```
 
 ## 2. Install autotools, libtool, make, gcc and g++
-'''bash
+```bash
 sudo apt-get install libtool
 sudo apt-get install autotools-dev
 sudo apt-get install autoconf
 # and so on...
-'''
+```
 ## 3. execute buildStandalone
 sudo bash buildStandalone.sh
 
@@ -31,13 +31,13 @@ Newer gcc Version does not tolerate cast from char to unsigned char, thus you ne
 
 #### Solution
 If you are too 'lazy' to change it manually, you can type the following command on the terminal when you are in opensmile-2.3.0:
-'''bash
+```bash
 sed -i '117s/(char)/(unsigned char)/g' src/include/core/vectorTransform.hpp
-'''
+```
 If you are on the same level with opensmile-2.3.0 directory, you can type:
-'''bash
+```bash
 sed -i '117s/(char)/(unsigned char)/g' opensmile-2.3.0/src/include/core/vectorTransform.hpp
-'''
+```
 
 ### 3b Build again
 execute the command again and I saw:
@@ -73,9 +73,9 @@ build successfull. You can now use the inst/bin/SMILExtract binary.
 We can now move on to test it.
 
 ## 4. Test
-'''bash
+```bash
 ./SMILExtract -C config/demo/demo1_energy.conf -I example-audio/opensmile.wav -O opensmile.energy.csv
-'''
+```
 
 ### Result
 Some text from opensmile.energy.csv
