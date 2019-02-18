@@ -3,36 +3,43 @@ layout: post
 title: "How to install OpenSMILE 2.3.0 on Ubuntu"
 comments: true
 description: "A brief introduction with troubleshooting"
-keywords: "OpenSMILE, Ubuntu, troubleshooting"
+tags: "OpenSMILE, Ubuntu, troubleshooting"
 ---
-# 1. Unpacking
+## 1. Unpacking
+'''bash
 tar -zxvf opensmile-2.3.0.tar.gz 
+'''
 
-# 2. Install autotools, libtool, make, gcc and g++
+## 2. Install autotools, libtool, make, gcc and g++
+'''bash
 sudo apt-get install libtool
 sudo apt-get install autotools-dev
 sudo apt-get install autoconf
-and so on...
-
-# 3. execute buildStandalone
+# and so on...
+'''
+## 3. execute buildStandalone
 sudo bash buildStandalone.sh
 
-## 3a Troubleshooting with build problem (Source: [[^1]])
-### Problem Description
+### 3a Troubleshooting with build problem (see source [here](https://github.com/naxingyu/opensmile/issues/2))
+#### Problem Description
 Ecoutered problem "error: narrowing conversion of ‘'\37777777756'’ from ‘char’ to ‘unsigned char’ inside { } [-Wnarrowing]
 unsigned char smileMagic[] = {(char)0xEE, (char)0x11, (char)0x11, (char)0x00};"
 
 
-### Analyze
+#### Analyze
 Newer gcc Version does not tolerate cast from char to unsigned char, thus you need to change the casts of the consts from char to unsigned char in vectorTransform.hpp in line 117. It will be solved in version 2.4. which will be released by audEERING soon.
 
-### Solution
->If you are too 'lazy' to change it manually, you can type the following command on the terminal when you are in opensmile-2.3.0:
+#### Solution
+If you are too 'lazy' to change it manually, you can type the following command on the terminal when you are in opensmile-2.3.0:
+'''bash
 sed -i '117s/(char)/(unsigned char)/g' src/include/core/vectorTransform.hpp
+'''
 If you are on the same level with opensmile-2.3.0 directory, you can type:
+'''bash
 sed -i '117s/(char)/(unsigned char)/g' opensmile-2.3.0/src/include/core/vectorTransform.hpp
+'''
 
-## 3b Build again
+### 3b Build again
 execute the command again and I saw:
 
 ```
@@ -65,10 +72,12 @@ build successfull. You can now use the inst/bin/SMILExtract binary.
 
 We can now move on to test it.
 
-# 4. Test
+## 4. Test
+'''bash
 ./SMILExtract -C config/demo/demo1_energy.conf -I example-audio/opensmile.wav -O opensmile.energy.csv
+'''
 
-## Result
+### Result
 Some text from opensmile.energy.csv
 ```
 frameIndex;frameTime;pcm_LOGenergy
