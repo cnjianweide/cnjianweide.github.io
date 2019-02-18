@@ -18,7 +18,9 @@ sudo apt-get install autoconf
 # and so on...
 ```
 ## 3. execute buildStandalone
+```bash
 sudo bash buildStandalone.sh
+```
 
 ### 3a Troubleshooting with build problem (see source [here](https://github.com/naxingyu/opensmile/issues/2))
 #### Problem Description
