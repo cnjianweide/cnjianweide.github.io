@@ -22,9 +22,13 @@ sudo bash buildStandalone.sh
 
 ### 3a Troubleshooting with build problem (see source [here](https://github.com/naxingyu/opensmile/issues/2))
 #### Problem Description
-Ecoutered problem "error: narrowing conversion of ‘'\37777777756'’ from ‘char’ to ‘unsigned char’ inside { } [-Wnarrowing]
-unsigned char smileMagic[] = {(char)0xEE, (char)0x11, (char)0x11, (char)0x00};"
-
+Ecoutered problem 
+```
+error: narrowing conversion of ‘'\37777777756'’ 
+from ‘char’ to ‘unsigned char’ inside { } [-Wnarrowing]
+unsigned char smileMagic[] =
+{(char)0xEE, (char)0x11, (char)0x11, (char)0x00};"
+```
 
 #### Analyze
 Newer gcc Version does not tolerate cast from char to unsigned char, thus you need to change the casts of the consts from char to unsigned char in vectorTransform.hpp in line 117. It will be solved in version 2.4. which will be released by audEERING soon.
@@ -73,6 +77,7 @@ build successfull. You can now use the inst/bin/SMILExtract binary.
 We can now move on to test it.
 
 ## 4. Test
+I used a simple configuration file to extract the feature of energy.
 ```bash
 ./SMILExtract -C config/demo/demo1_energy.conf -I example-audio/opensmile.wav -O opensmile.energy.csv
 ```
@@ -86,7 +91,3 @@ frameIndex;frameTime;pcm_LOGenergy
 2;0.020000;-1.362546e+01
 3;0.030000;-1.371792e+01
 ```
-
----
-Footnote: 
-[^1] https://github.com/naxingyu/opensmile/issues/2
