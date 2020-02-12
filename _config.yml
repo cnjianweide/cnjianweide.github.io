@@ -2,7 +2,7 @@ title: Jianwei's Online Home
 author: Jianwei Shi
 email: jianwei.shi.cn_at_outlook_dot_com
 description: > # this means to ignore newlines until "twitter_username:"
-  coming soon ...
+  Computer Science, IT Techniques, and more.
 
 show_excerpts: false # set to true to show excerpts on the homepage
 
@@ -13,14 +13,14 @@ minima:
 
   # generate social links in footer
   social_links:
-    twitter: jekyllrb
-    github:  jekyll
-    rss: rss
+    # twitter: jekyllrb
+    github:  cnjianweide
+    # rss: rss
     # dribbble: jekyll
     # facebook: jekyll
     # flickr:   jekyll
     # instagram: jekyll
-    # linkedin: jekyll
+    linkedin: cn-jianwei-shi-de
     # pinterest: jekyll
     # youtube: jekyll
     # youtube_channel: UC8CXR0-3I70i1tfPg1PAE1g
